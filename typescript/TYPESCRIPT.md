@@ -27,7 +27,7 @@ The following naming convention **MUST** be used
 
 ### Use kebab-case for:
 - files
-- naming files to save on disk
+- naming files to save on disk/object storage
 - naming files to retur to the users
 
 ## Naming Convention Best Practices
@@ -41,6 +41,8 @@ Identifiers should not generally use $, except when aligning with naming convent
 ### Observables
 Observables **MUST** be Suffixed with $ in order to help resolve confusion regarding observable values vs concrete values. 
 
+### Interfaces
+Interfaces **MUST** be prefixed with I. The interface for the Class *Invoice* must be *IInvoice*
 
 ### JSDoc vs comments
 There are two types of comments, JSDoc (/\*\* ... \*/) and non-JSDoc ordinary comments (// ... or /\* ... \*/).
@@ -71,10 +73,15 @@ The Following **MUST** be Always JSDoc-umented
 - methods 
 - parameters
 
-## Files Grouping
-
+## Files Grouping and Naming
 Each Typescript File **SHOULD** include a single Class/Interface/Constant/ecc.
 
-A single Typescript File **MAY** contain more items in case those items are strictly coupled such the case of an Interface and the Class who implements it or in case of very specific object coupling situtions. 
+A single Typescript File **MAY** contain more items in case those items are strictly coupled such the case of an Interface and the Class who implements it or in case of very specific object coupling situtions. See [invoice.ts](./examples/invoice.ts) as admissible Coupling Example.  
+
+Each Typescript file **MUST** be named against its content. Single Item files must be named against the item they contains using kebak-case.
+
+File Containing multiple items **MUST** be named against the central item. 
+
+
 
 
