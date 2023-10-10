@@ -28,7 +28,7 @@ The following naming convention **MUST** be used
 ### Use kebab-case for:
 - files
 - naming files to save on disk/object storage
-- naming files to retur to the users
+- naming files to return to the users
 
 ## Naming Convention Best Practices
 
