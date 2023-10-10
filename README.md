@@ -13,3 +13,4 @@ All examples given are non-normative and serve only to illustrate the normative 
 
 ## Available Style Guides
 - [Typescript](./typescript/TYPESCRIPT.md)
+- [Angular](./angular/ANGULAR.md)
