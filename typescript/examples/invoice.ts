@@ -19,7 +19,8 @@ export class Invoice {
 
     /**
      * 
-     * Invoice Constructor. It gets the WS result and make an Invoice
+     * Invoice Constructor. 
+     * It gets the WS result and create an Invoice
      * Object 
      * 
      * @param i IInvoice the Invoice Object as returned from Webservice 
@@ -31,12 +32,12 @@ export class Invoice {
     }
 
     /**
-     * Set a Castumer in the Invoice
+     * Set a Custumer in the Invoice
      * @param c Customer to be setted in the invoice
      */
     setCustomer(c: Customer): boolean {
         if (c.id !== this.customer.id) {
-            this.customer = this.customer;
+            this.customer = c;
             return true;
         }
         return false;

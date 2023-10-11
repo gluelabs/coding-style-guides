@@ -29,6 +29,7 @@ The following naming convention **MUST** be used
 - files
 - naming files to save on disk/object storage
 - naming files to return to the users
+- folders names 
 
 ## Naming Convention Best Practices
 
@@ -36,7 +37,7 @@ The following naming convention **MUST** be used
 Treat abbreviations like acronyms in names as whole words, i.e. use *loadHttpUrl*, not *loadHTTPURL*, unless required by a platform name (e.g. XMLHttpRequest).
 
 ### Dollar sign
-Identifiers should not generally use $, except when aligning with naming conventions for third party frameworks and for Observables.
+Identifiers **SHOULD NOT** generally use $, except when aligning with naming conventions for third party frameworks and for Observables.
 
 ### Observables
 Observables **MUST** be Suffixed with $ in order to help resolve confusion regarding observable values vs concrete values. 
