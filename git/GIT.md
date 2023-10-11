@@ -41,8 +41,8 @@ The following Branches are allowed:
  - master
  - develop
  - feat/feature-name
- - feat/relese-name
- - feat/hotfix-name
+ - relese/relese-name
+ - hotfix/hotfix-name
 
 ## Tagging
 Releses **MUST** be tagged using [Semantic Versioning](https://semver.org/)
