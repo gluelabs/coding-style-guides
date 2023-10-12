@@ -44,7 +44,7 @@ The following Branches are allowed:
  - relese/relese-name
  - hotfix/hotfix-name
 
-You **SHOULD** use branch master for production releases and branch development for next releases.
+You **MUST** use branch master for production releases and branch development for next releases.
 
 You **MAY** use git-flow tool to perform a release branch process. It has the advantage of reducing the number of commands compared to git.
 
