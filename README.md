@@ -15,3 +15,7 @@ All examples given are non-normative and serve only to illustrate the normative 
 - [Typescript](./typescript/TYPESCRIPT.md)
 - [GIT](./git/GIT.md)
 - [Angular](./angular/ANGULAR.md)
+
+## Style Guides in Development
+- REST API
+- Postman API
