@@ -44,7 +44,7 @@ Some APIs May have variants such as different Parameters that may affest the res
 
 The API variants *MUST* be named against the base api, adding a lowercase incremental letter to the API and a n improved description pointing out the specificity of the variant
 
-<img src="api-variants.png" alt="Api Variants" width="400"/>
+<img src="api-variants.png" alt="Api Variants" width="500"/>
 
 
 ## Environment 
@@ -73,12 +73,12 @@ We take advantage of the postaman advanced functions in order to custom integrat
 
 ![Authentication Process Step 1](authentication-process-1.png)
 
-
 2. Set authentication at the collection level and configure each API or Folder to inherit the Auth from the parent
 
 ![Authentication Process Step 2](authentication-process-2.png)
 
 3. Exclude Login API from the Authentication inheritance
+
 ![Authentication Process Step 3](authentication-process-3.png)
 
 ## Additional Best Practices

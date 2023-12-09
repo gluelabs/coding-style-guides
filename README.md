@@ -18,4 +18,4 @@ All examples given are non-normative and serve only to illustrate the normative 
 - [Postman](./postman/POSTMAN.md)
 
 ## Style Guides in Development
-- REST API
+- [REST API](./rest/REST.MD)
