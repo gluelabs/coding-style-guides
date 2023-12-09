@@ -43,6 +43,7 @@ The API Calls *MUST* follow the naming standrd: `#IDN - Description`
 Some APIs May have variants such as different Parameters that may affest the results of the API usage, such as Query String Parameters or specific HTTP Headers. The API Variants *SHOULD* be always documented.
 
 The API variants *MUST* be named against the base api, adding a lowercase incremental letter to the API and a n improved description pointing out the specificity of the variant
+
 <img src="api-variants.png" alt="Api Variants" width="400"/>
 
 
