@@ -6,7 +6,16 @@ This document define internal conventions and best practices using GIT to be fol
 
 Every Commit Message **MUST** have the following structure:
 
+> type: subject
+
+or
 > type(scope): subject
+
+or in case of commit with breaking changes
+> type!: subject
+
+or
+> type(scope)!: subject
 
 ### The type
 The type field **MUST** be chosen from the options listed below:
@@ -25,6 +34,16 @@ The *scope* is optional
 The *scope* field should be a noun that represents the part of the codebase affected by the commit.
 
 For example, if the commit changes the login page, the scope could be “login”. If the commit affects multiple areas of the codebase, “global” or “all” could be used as the scope.
+
+### Breaking Changes
+In case the commit introduces Breaking Changes to the internal interfaces or i.e. in case of changes to the APIs Interfaces, the commit message **MUST** include the **!** character to the type or the scope (if existent)
+
+For example:
+
+> type!: subject
+
+or
+> type(scope)!: subject
 
 
 ## The Subject
