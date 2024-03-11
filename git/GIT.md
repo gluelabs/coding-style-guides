@@ -59,8 +59,8 @@ The following Branches are allowed:
 
  - master
  - develop
- - feat/feature-name
- - relese/relese-name
+ - feature/feature-name
+ - release/relese-name
  - hotfix/hotfix-name
 
 You **MUST** use branch master for production releases and branch development for next releases.
