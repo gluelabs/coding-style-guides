@@ -60,7 +60,7 @@ The following Branches are allowed:
  - master
  - develop
  - feature/feature-name
- - release/relese-name
+ - release/release-name
  - hotfix/hotfix-name
 
 You **MUST** use branch master for production releases and branch development for next releases.
