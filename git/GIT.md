@@ -104,6 +104,111 @@ git tag x.x.x
 git branch -D release/x.x.x
 ```
 
+### Hotfix
+
+Hotfix branches are used for emergency fixes on the production version (master branch). They follow a specific workflow and versioning convention to track different types of issues and their resolution attempts.
+
+#### Versioning Convention
+Format: `x.y.z-hotfix.{a|b|c|...}-n` (**Master branch only**)
+- `x.y.z`: Current production version on master
+- `{a|b|c|...}`: Issue identifier (increments alphabetically for different issues in same version)
+- `n`: Patch number (increments for attempts to fix same issue)
+
+**Important:** This hotfix tagging convention is exclusively for fixes on the master branch. Development branch follows regular semantic versioning.
+
+#### Workflow Example
+
+Let's consider a scenario:
+- Develop branch is on version `2.1.5` (k)
+- Master branch is on version `2.1.3` (z)
+
+1. **First Critical Issue**
+   ```bash
+   # Create hotfix branch from master (production)
+   git checkout master  # Important: Always start from master
+   git checkout -b hotfix/critical-auth-issue
+   
+   # After fixing, tag and merge
+   git tag v2.1.3-hotfix.a-1  # Hotfix tag only on master
+   ```
+   - If fix fails, create new patch: `2.1.3-hotfix.a-2`
+   - Continue until issue is resolved (e.g., `2.1.3-hotfix.a-3`)
+
+2. **New Unrelated Issue**
+   - If a new issue occurs while still on version 2.1.3:
+   ```bash
+   git checkout master
+   git checkout -b hotfix/payment-system-issue
+   
+   # Tag with next letter since it's a different issue
+   git tag v2.1.3-hotfix.b-1
+   ```
+
+#### Merging Process
+1. Merge hotfix into master
+   ```bash
+   git checkout master
+   git merge hotfix/issue-name
+   ```
+
+2. Merge hotfix into develop
+   ```bash
+   git checkout develop
+   git merge hotfix/issue-name
+   # Develop version increments: 2.1.5 -> 2.1.6
+   ```
+
+3. Delete hotfix branch
+   ```bash
+   git branch -d hotfix/issue-name
+   ```
+
+#### Important Notes
+- Hotfix tags (x.y.z-hotfix.{a|b|c|...}-n) are **exclusively** for master branch fixes
+- Always create hotfix branches from master
+- Each different issue gets a new letter (a, b, c...)
+- Same issue patches increment the number (-1, -2, -3...)
+- Develop branch version should increment after merging hotfix, following regular semantic versioning
+- All hotfixes must be merged to both master and develop
+- Notify relevant team members before starting a hotfix
+- Don't include unrelated changes in hotfix branches
+- Don't forget to merge into both master AND develop
+- Don't create hotfix branches from develop
+- Don't use hotfix process for non-emergency changes
+- Delete hotfix branches after successful merge
+
+#### Using Git Flow Commands
+Git flow provides simplified commands for hotfix management:
+
+1. **Start a hotfix**
+   ```bash
+   # This will create a hotfix branch from master
+   git flow hotfix start issue-name x.y.z-hotfix.a-1
+   ```
+
+2. **Finish a hotfix**
+   ```bash
+   # This will:
+   # - Merge hotfix into master
+   # - Tag the merge in master with the specified version
+   # - Merge hotfix into develop
+   # - Remove the hotfix branch
+   git flow hotfix finish 'issue-name'
+   ```
+
+This is equivalent to the following git commands:
+```bash
+git checkout master
+git merge hotfix/issue-name
+git tag x.y.z-hotfix.a-1
+git checkout develop
+git merge hotfix/issue-name
+git branch -d hotfix/issue-name
+```
+
+**Note:** When using git-flow for hotfixes, you still need to follow the hotfix versioning convention (x.y.z-hotfix.{a|b|c|...}-n) for tags on master branch.
+
+
 ## Tagging
 Releses **MUST** be tagged using [Semantic Versioning](https://semver.org/)
 
